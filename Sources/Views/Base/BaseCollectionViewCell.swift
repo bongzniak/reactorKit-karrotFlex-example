@@ -37,14 +37,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        if !self.didSetupConstraints {
-            self.setupConstraints()
-            self.didSetupConstraints = true
-        }
-        super.layoutSubviews()
-    }
-
     override func prepareForReuse() {
         super.prepareForReuse()
 
