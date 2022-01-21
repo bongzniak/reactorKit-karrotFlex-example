@@ -61,11 +61,9 @@ final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.Vie
                 $0.series
             }
             .distinctUntilChanged()
-            .filter { $0 != nil }
+            .filterNil()
             .subscribe(onNext: { [weak self] series in
-                if let series = series {
-                    self?.bodyView.reactor?.action.onNext(.updateSeries(series))
-                }
+                self?.bodyView.bind(action: .updateSeries(series))
             })
             .disposed(by: disposeBag)
     }
