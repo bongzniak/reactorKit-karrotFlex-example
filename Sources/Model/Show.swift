@@ -9,14 +9,16 @@
 import Foundation
 
 struct Show {
+    let episode: String
     let title: String
+    let url: URL?
     let length: String
     let detail: String
-    let url: URL?
     let showPopularity: Int
-    
+
     init(item: [String: AnyObject]) {
         guard
+            let episode = item["episode"] as? String,
             let title = item["title"] as? String,
             let length = item["length"] as? String,
             let detail = item["detail"] as? String,
@@ -26,6 +28,7 @@ struct Show {
             fatalError("Error parsing dict \(item)")
         }
         
+        self.episode = episode
         self.title = title
         self.length = length
         self.detail = detail
