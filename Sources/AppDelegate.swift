@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  appname
+//  ReactorKit-KarrotFlex-Example
 //
 //  Created by Fernando on 2020/09/29.
 //
