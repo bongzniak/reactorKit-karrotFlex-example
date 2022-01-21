@@ -24,6 +24,9 @@ PODS:
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - SwiftLint (0.45.1)
   - Then (2.7.0)
   - WeakMapTable (1.2.0)
@@ -36,6 +39,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - RxViewController
   - SwiftLint
   - Then
 
@@ -51,6 +55,7 @@ SPEC REPOS:
     - RxDataSources
     - RxRelay
     - RxSwift
+    - RxViewController
     - SwiftLint
     - Then
     - WeakMapTable
@@ -77,10 +82,11 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 31ae3eeace56157093782181c28214cb66302982
+PODFILE CHECKSUM: 039498a0b98a91900430036d73190117dcd8a1ca
 
 COCOAPODS: 1.11.2
