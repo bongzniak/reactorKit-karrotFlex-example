@@ -1,0 +1,5 @@
+included:
+  - ReactorKit-KarrotFlex-Example
+
+excluded:
+  - Pods
