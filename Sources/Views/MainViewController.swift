@@ -41,6 +41,8 @@ final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.Vie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "Sherlock"
     }
     
     // MARK: Binding
