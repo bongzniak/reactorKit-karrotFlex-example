@@ -1,0 +1,23 @@
+# format options
+--allman false
+--indent 4
+--comments indent
+
+# file options 
+--exclude Pods
+
+# rules
+--rules indent
+--rules isEmpty
+--rules todos
+--rules consecutiveBlankLines
+--rules consecutiveSpaces
+--rules emptyBraces
+--rules duplicateImports
+--rules spaceAroundComments
+--rules spaceInsideComments
+--rules semicolons
+--rules typeSugar
+--rules void
+--rules strongOutlets
+--rules spaceInsideGenerics

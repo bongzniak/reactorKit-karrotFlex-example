@@ -1,0 +1,7 @@
+git_url(ENV['MATCH_CERTIFICATION_GIT_URL'])
+username(ENV['APPLE_ID'])
+team_id(ENV['APPLE_TEAM_ID'])
+app_identifier([
+    ENV["APPLE_APP_IDENTIFIER"], 
+    ENV["APPLE_APP_IDENTIFIER_BETA"]])
+readonly(false)

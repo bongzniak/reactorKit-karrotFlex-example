@@ -1,0 +1,68 @@
+name: appname 
+attributes:
+  ORGANIZATIONNAME: tmsae
+options:
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  bundleIdPrefix: com.tmsae
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  deploymentTarget:
+    iOS: '13.0'
+  fileGroups:
+  - Sources
+  - Supporting Files
+configs:
+  Development Debug: debug
+  Development Release: release
+  AppStore Debug: debug
+  AppStore Release: release
+configFiles:
+      Development Debug: Supporting Files/Environment/Debug.xcconfig
+      Development Release: Supporting Files/Environment/Release.xcconfig
+      AppStore Debug: Supporting Files/Environment/Debug.xcconfig
+      AppStore Release: Supporting Files/Environment/Release.xcconfig
+scheme: 
+  appname: 
+    build:
+      targets:
+        appname: [run, archive]
+targets:
+  appname:
+    attributes:
+      SystemCapabilities:
+        com.apple.Push:
+          enabled: 1
+    scheme:
+      configVariants:
+        - Development 
+        - AppStore
+    type: application
+    platform: iOS
+    deploymentTarget: '13.0'
+    settings: 
+      base:
+        INFOPLIST_FILE: Supporting Files/Info.plist
+        FRAMEWORK_SEARCH_PATHS: [$(inherited), $(PROJECT_DIR), $(SRCROOT)]
+        LIBRARY_SEARCH_PATHS: [$(inherited)]
+        DEVELOPMENT_TEAM: U6GQL8JQMT
+        CODE_SIGN_STYLE: Manual 
+        ENABLE_BITCODE: false 
+        TARGETED_DEVICE_FAMILY: 1
+        DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+      configs: 
+        Development:
+          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.appname.beta"
+          CODE_SIGN_IDENTITY: iPhone Developer 
+          PROVISIONING_PROFILE_SPECIFIER: match Development com.tmsae.appname.beta
+        AppStore: 
+          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.appname"
+          CODE_SIGN_IDENTITY: iPhone Distribution
+          PROVISIONING_PROFILE_SPECIFIER: match AppStore com.tmsae.appname
+    sources:
+      - Sources
+      - path: 'Supporting Files'
+        type: group
+      - path: 'Resources'
+        type: group

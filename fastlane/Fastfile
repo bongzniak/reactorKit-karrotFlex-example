@@ -1,0 +1,55 @@
+
+default_platform :ios 
+
+platform :ios do
+
+  
+  before_all do 
+
+  end 
+  
+  desc "increase build number"
+  lane :increase_build_number do | options | 
+    increment_build_number_in_plist(
+      target: ENV['SCHEMA_FOR_DEVELOP']
+    )
+
+  end 
+
+  desc "increase version number"
+  lane :increase_version_number do | options | 
+
+    increment_version_number_in_plist(
+      bump_type: options[:type],
+      target: ENV['SCHEMA_FOR_DEVELOP']
+    )
+  end
+
+  desc "Create New App"
+  lane :register_app do | options | 
+    
+    produce(
+        username: ENV["APPLE_ID"],
+        app_identifier: ENV["APPLE_APP_IDENTIFIER_BETA"],
+        app_name: "appname Beta",
+        skip_itc: true
+    )
+
+    produce(
+        username: ENV["APPLE_ID"],
+        app_identifier: ENV["APPLE_APP_IDENTIFIER"],
+        app_name: "appname",
+        skip_itc: true
+    )
+
+  end 
+
+  
+  after_all do |lane|
+    notification(
+      subtitle:ENV['NOTIFICATION_TITLE'], 
+      message:ENV['NOTIFICATION_MESSAGE'], 
+      sound:ENV['NOTIFICATION_SOUND']
+      )
+  end 
+end
