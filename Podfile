@@ -3,14 +3,15 @@ use_frameworks!
 inhibit_all_warnings!
 
 def ui_pods 
-    pod 'SnapKit'
+    pod 'KarrotFlex', :git => 'https://github.com/daangn/KarrotFlex', :branch => 'develop'
 end 
 
 def rx_pods
-    pod 'RxSwift', '~> 5.0'
+    pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxDataSources'
-end 
+    pod 'ReusableKit'
+end
 
 def pods
     # Logging
@@ -19,10 +20,13 @@ def pods
     # Architecture 
     pod 'ReactorKit'
     pod 'Then'
+    
+    #
+    pod 'SwiftLint'
 end
 
 
-target 'appname' do 
+target 'ReactorKit-KarrotFlex-Example' do 
     pods 
     rx_pods
     ui_pods
