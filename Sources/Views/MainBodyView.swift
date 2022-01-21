@@ -93,7 +93,7 @@ final class MainBodyView: BaseView, View {
         $0.font = Font.episodeBarLabel
     }
 
-    private let collectionView = UICollectionView(
+    let collectionView = UICollectionView(
         frame: CGRect.zero,
         collectionViewLayout: UICollectionViewFlowLayout().then { $0.scrollDirection = .vertical }
     ).then {
@@ -102,6 +102,9 @@ final class MainBodyView: BaseView, View {
 
         $0.register(Reusable.episodeCell)
     }
+
+    var collectionViewFlex: Flex?
+
 
     // MARK: Initializing
 
@@ -194,7 +197,7 @@ final class MainBodyView: BaseView, View {
 
             FlexItem($0, view: collectionView)
                 .grow(1)
-                .height(450)
+                .register(&collectionViewFlex)
         }
     }
     
@@ -206,6 +209,14 @@ final class MainBodyView: BaseView, View {
 
         collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+
+        collectionView.rx.observe(CGSize.self, "contentSize")
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] size in
+                self?.collectionViewFlex?.height(size?.height)
+                self?.setNeedsLayout()
+            })
+            .disposed(by: self.disposeBag)
 
         // Action
 
