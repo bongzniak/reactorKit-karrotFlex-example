@@ -60,8 +60,8 @@ final class EpisodeCell: BaseCollectionViewCell, View {
         contentView.flex.define {
             FlexHStack($0, alignItems: .center) {
                 FlexItem($0, view: self.imageView)
-                    .height(100%)
                     .width(Metric.imageViewWidth)
+                    .height(Metric.height)
                 FlexSpacer($0, spacing: 10)
                 FlexVStack($0, justifyContent: .center) {
                     FlexItem($0, view: self.titleLabel)
@@ -69,7 +69,6 @@ final class EpisodeCell: BaseCollectionViewCell, View {
                     FlexItem($0, view: self.lengthLabel)
                 }
             }
-                .grow(1)
         }
     }
 
@@ -111,6 +110,7 @@ final class EpisodeCell: BaseCollectionViewCell, View {
                 self?.lengthLabel.flex.markDirty()
                 self?.lengthLabel.setNeedsLayout()
             })
+            .disposed(by: disposeBag)
     }
 
     private func titleAttributedString(episode: String, title: String) -> NSAttributedString {

@@ -100,6 +100,8 @@ final class MainBodyView: BaseView, View {
         $0.bounces = false
         $0.isScrollEnabled = false
 
+        $0.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+
         $0.register(Reusable.episodeCell)
     }
 
@@ -353,7 +355,7 @@ final class MainBodyView: BaseView, View {
 extension MainBodyView {
     private func dataSourceFactory() -> RxDataSource {
         RxDataSource(
-            configureCell: { [weak self] (_, collectionView, indexPath, sectionItem) in
+            configureCell: { (_, collectionView, indexPath, sectionItem) in
                 switch sectionItem {
                     case .episode(let reactor):
                         return collectionView.dequeue(Reusable.episodeCell, for: indexPath).then {
@@ -374,9 +376,12 @@ extension MainBodyView: UICollectionViewDelegateFlowLayout {
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let sectionItem = dataSource[indexPath.section].items[indexPath.item]
+        let width = collectionView.frame.width
+            - collectionView.contentInset.left
+            - collectionView.contentInset.right
         switch sectionItem {
             case .episode:
-                return Reusable.episodeCell.class.size(width: collectionView.frame.width)
+                return Reusable.episodeCell.class.size(width: width)
         }
     }
 }
