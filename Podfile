@@ -10,6 +10,7 @@ def rx_pods
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxViewController'
+    pod 'RxOptional'
     pod 'RxDataSources'
     pod 'ReusableKit'
 end
