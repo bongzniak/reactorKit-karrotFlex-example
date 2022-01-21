@@ -12,17 +12,56 @@ import RxSwift
 
 final class MainViewReactor: Reactor {
     
-    typealias Action = NoAction
-    typealias Mutation = NoMutation
+    enum Action {
+        case load
+    }
+    
+    enum Mutation {
+        case setSeries(Series?)
+    }
     
     struct State {
+        var series: Series?
     }
     
     let initialState: State
+
+    // MARK: Properties
+    
+    let seriesService: SeriesServiceType
     
     // MARK: Initializing
     
-    init() {
+    init(seriesService: SeriesServiceType) {
+        self.seriesService = seriesService
+        
         initialState = State()
+    }
+    
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+            case .load:
+                return loadSeries()
+        }
+    }
+    
+    func reduce(state: State, mutation: Mutation) -> State {
+        var state = state
+        
+        switch mutation {
+            case .setSeries(let series):
+                state.series = series
+        }
+        
+        return state
+    }
+    
+    func loadSeries() -> Observable<Mutation> {
+        seriesService
+            .loadSeries()
+            .asObservable()
+            .map {
+                return .setSeries($0)
+            }
     }
 }

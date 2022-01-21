@@ -11,6 +11,7 @@ import UIKit
 import ReactorKit
 import RxCocoa
 import RxSwift
+import RxViewController
 
 final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.View {
     
@@ -45,9 +46,28 @@ final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.Vie
     // MARK: Binding
     
     func bind(reactor: Reactor) {
-        // Action
+        
+        // View
+        
+        rx.viewDidLoad.map {
+                Reactor.Action.load
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
         // State
+        
+        reactor.state.map {
+                $0.series
+            }
+            .distinctUntilChanged()
+            .filter { $0 != nil }
+            .subscribe(onNext: { [weak self] series in
+                if let series = series {
+                    self?.bodyView.reactor?.action.onNext(.updateSeries(series))
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
