@@ -18,29 +18,18 @@ final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.Vie
     
     typealias Reactor = MainViewReactor
     
-    
     // MARK: Constants
-    
-    private struct Metric {
-    }
-    
-    private struct Color {
-    }
-    
-    private struct Font {
-    }
-    
-    private struct Localized {
-        
-    }
     
     // MARK: Properties
     
     // MARK: Initializing
     
     init(reactor: Reactor, view: MainBodyView) {
+        defer {
+            self.reactor = reactor
+        }
+        
         super.init(view: view)
-        self.reactor = reactor
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,7 +54,7 @@ final class MainViewController: BaseViewController<MainBodyView>, ReactorKit.Vie
 extension MainViewController {
     class func resolve() -> MainViewController {
         MainViewController(
-            reactor: Reactor(),
+            reactor: Reactor(seriesService: SeriesService()),
             view: MainBodyView.resolve()
         )
     }
