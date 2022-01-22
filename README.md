@@ -1,5 +1,6 @@
-# reactorKit-karrotFlex-exampleF
-ReactorKit + KarrotFlex 예제 작성을 위해서 만들어진 프로젝트 입니다.
+# reactorKit-karrotFlex-example
+
+:tada: ReactorKit + KarrotFlex 예제 작성을 위해서 만들어진 프로젝트로 [raywenderlich tutorial](https://www.raywenderlich.com/530-yoga-tutorial-using-a-cross-platform-layout-engine)을 참고하여 작성하였습니다.
 
 # Dedendencies
 
