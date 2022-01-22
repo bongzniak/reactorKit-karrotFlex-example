@@ -94,22 +94,14 @@ final class EpisodeCell: BaseCollectionViewCell, View {
             .map { [weak self] (episode: String, title: String) -> NSAttributedString? in
                 self?.titleAttributedString(episode: episode, title: title)
             }
-            .subscribe(onNext: { [weak self] attributedText in
-                self?.titleLabel.attributedText = attributedText
-                self?.titleLabel.flex.markDirty()
-                self?.titleLabel.setNeedsLayout()
-            })
+            .bind(to: titleLabel.rx.flexAttributedText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.length
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] length in
-                self?.lengthLabel.text = length
-                self?.lengthLabel.flex.markDirty()
-                self?.lengthLabel.setNeedsLayout()
-            })
+            .bind(to: lengthLabel.rx.flexText)
             .disposed(by: disposeBag)
     }
 

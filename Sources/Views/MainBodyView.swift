@@ -251,99 +251,63 @@ final class MainBodyView: BaseView, View {
                 String(repeating: "★", count: $0.showPopularity)
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showPopularityText in
-                self?.popularityLabel.text = showPopularityText
-                self?.popularityLabel.flex.markDirty()
-                self?.popularityLabel.setNeedsLayout()
-            })
+            .bind(to: popularityLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.showYear
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showYear in
-                self?.yearLabel.text = showYear
-                self?.yearLabel.flex.markDirty()
-                self?.yearLabel.setNeedsLayout()
-            })
+            .bind(to: yearLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.showRating
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showRating in
-                self?.ratingLabel.text = showRating
-                self?.ratingLabel.flex.markDirty()
-                self?.ratingLabel.setNeedsLayout()
-            })
+            .bind(to: ratingLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.showLength
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showLength in
-                self?.lengthLabel.text = showLength
-                self?.lengthLabel.flex.markDirty()
-                self?.lengthLabel.setNeedsLayout()
-            })
+            .bind(to: lengthLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.episode
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] episode in
-                self?.episodeLabel.text = episode
-                self?.episodeLabel.flex.markDirty()
-                self?.episodeLabel.setNeedsLayout()
-            })
+            .bind(to: episodeLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.episodeTitle
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] episodeTitle in
-                self?.episodeTitleLabel.text = episodeTitle
-                self?.episodeTitleLabel.flex.markDirty()
-                self?.episodeTitleLabel.setNeedsLayout()
-            })
+            .bind(to: episodeTitleLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 $0.episodeDescription
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] description in
-                self?.descriptionLabel.text = description
-                self?.descriptionLabel.flex.markDirty()
-                self?.descriptionLabel.setNeedsLayout()
-            })
+            .bind(to: descriptionLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                  "\(Localized.cast): \($0.showCast)"
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showCast in
-                self?.castLabel.text = showCast
-                self?.castLabel.flex.markDirty()
-                self?.castLabel.setNeedsLayout()
-            })
+            .bind(to: castLabel.rx.flexText)
             .disposed(by: disposeBag)
 
         reactor.state.map {
                 "\(Localized.creators): \($0.showCreators)"
             }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] showCreators in
-                self?.creatorLabel.text = showCreators
-                self?.creatorLabel.flex.markDirty()
-                self?.creatorLabel.setNeedsLayout()
-            })
+            .bind(to: creatorLabel.rx.flexText)
             .disposed(by: disposeBag)
     }
     
