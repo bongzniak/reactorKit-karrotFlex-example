@@ -1,34 +1,32 @@
-# toy-template
-🧰 Simple toy project template for iOS application based reactorkit.
+# reactorKit-karrotFlex-exampleF
+ReactorKit + KarrotFlex 예제 작성을 위해서 만들어진 프로젝트 입니다.
 
-# Dedendencies 
+# Dedendencies
+
 - ReactorKit 
-- RxSwift
+- RxCocoa
+- RxViewController
+- RxOptional
 - RxDataSources
-- SnapKit 
-- Then  
+- ReusableKit
+- KarrotFlex
+- Kingfisher
+- Then
 
 # Usage 
 
-1. Initialize your project
-
-```sh
-$ ./new.sh yourProjectName
-```
-
-2. install dependencies 
+1. install dependencies 
 ```sh 
 $ make install
 ```
 
-3. make project files 
+2. make project files 
 
 ```sh 
 $ make project
 ```
 
-4. remove new.sh 
+3. run project
 
-```sh 
-$ rm -rf new.sh
-```
+# Screenshot
+![image](https://user-images.githubusercontent.com/76252915/150623771-41632571-cfae-47bd-b62c-8c58b52bc7b5.png)
