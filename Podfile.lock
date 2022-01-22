@@ -1,0 +1,102 @@
+PODS:
+  - CocoaLumberjack/Core (3.7.2)
+  - CocoaLumberjack/Swift (3.7.2):
+    - CocoaLumberjack/Core
+  - Differentiator (4.0.1)
+  - FlexLayout (1.3.23)
+  - KarrotFlex (1.0.1):
+    - FlexLayout (~> 1.3)
+    - PinLayout (~> 1.10.0)
+  - Kingfisher (7.1.2)
+  - PinLayout (1.10.0)
+  - ReactorKit (2.1.1):
+    - RxSwift (~> 5.0)
+    - WeakMapTable (~> 1.1)
+  - ReusableKit (3.0.0):
+    - ReusableKit/Core (= 3.0.0)
+  - ReusableKit/Core (3.0.0)
+  - RxCocoa (5.1.3):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.3):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.3)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SwiftLint (0.45.1)
+  - Then (2.7.0)
+  - WeakMapTable (1.2.0)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift
+  - KarrotFlex (from `https://github.com/daangn/KarrotFlex`, branch `develop`)
+  - Kingfisher
+  - ReactorKit
+  - ReusableKit
+  - RxCocoa
+  - RxDataSources
+  - RxOptional
+  - RxSwift
+  - RxViewController
+  - SwiftLint
+  - Then
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
+    - Differentiator
+    - FlexLayout
+    - Kingfisher
+    - PinLayout
+    - ReactorKit
+    - ReusableKit
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - RxViewController
+    - SwiftLint
+    - Then
+    - WeakMapTable
+
+EXTERNAL SOURCES:
+  KarrotFlex:
+    :branch: develop
+    :git: https://github.com/daangn/KarrotFlex
+
+CHECKOUT OPTIONS:
+  KarrotFlex:
+    :commit: e5b30449fddd558f2792e5ab358a0d0116a3eaf4
+    :git: https://github.com/daangn/KarrotFlex
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  FlexLayout: 5b44c0538e7eaa2110e3160dfdfb74611676fb91
+  KarrotFlex: dd2a7d614dbda570585d8c3696ef552ea786b112
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
+  ReactorKit: 6d894a20c3d508344320901cd8e386fde92df4b6
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
+  RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
+  RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
+
+PODFILE CHECKSUM: 5611d3a0468f7a63fadad03d1d279e3e06d20bc9
+
+COCOAPODS: 1.11.2

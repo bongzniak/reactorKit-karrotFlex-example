@@ -31,14 +31,14 @@ platform :ios do
     produce(
         username: ENV["APPLE_ID"],
         app_identifier: ENV["APPLE_APP_IDENTIFIER_BETA"],
-        app_name: "appname Beta",
+        app_name: "ReactorKit-KarrotFlex-Example Beta",
         skip_itc: true
     )
 
     produce(
         username: ENV["APPLE_ID"],
         app_identifier: ENV["APPLE_APP_IDENTIFIER"],
-        app_name: "appname",
+        app_name: "ReactorKit-KarrotFlex-Example",
         skip_itc: true
     )
 

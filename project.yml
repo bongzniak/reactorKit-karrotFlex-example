@@ -1,4 +1,4 @@
-name: appname 
+name: ReactorKit-KarrotFlex-Example 
 attributes:
   ORGANIZATIONNAME: tmsae
 options:
@@ -24,12 +24,12 @@ configFiles:
       AppStore Debug: Supporting Files/Environment/Debug.xcconfig
       AppStore Release: Supporting Files/Environment/Release.xcconfig
 scheme: 
-  appname: 
+  ReactorKit-KarrotFlex-Example: 
     build:
       targets:
-        appname: [run, archive]
+        ReactorKit-KarrotFlex-Example: [run, archive]
 targets:
-  appname:
+  ReactorKit-KarrotFlex-Example:
     attributes:
       SystemCapabilities:
         com.apple.Push:
@@ -53,13 +53,13 @@ targets:
         DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
       configs: 
         Development:
-          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.appname.beta"
+          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.ReactorKit-KarrotFlex-Example.beta"
           CODE_SIGN_IDENTITY: iPhone Developer 
-          PROVISIONING_PROFILE_SPECIFIER: match Development com.tmsae.appname.beta
+          PROVISIONING_PROFILE_SPECIFIER: match Development com.tmsae.ReactorKit-KarrotFlex-Example.beta
         AppStore: 
-          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.appname"
+          PRODUCT_BUNDLE_IDENTIFIER: "com.tmsae.ReactorKit-KarrotFlex-Example"
           CODE_SIGN_IDENTITY: iPhone Distribution
-          PROVISIONING_PROFILE_SPECIFIER: match AppStore com.tmsae.appname
+          PROVISIONING_PROFILE_SPECIFIER: match AppStore com.tmsae.ReactorKit-KarrotFlex-Example
     sources:
       - Sources
       - path: 'Supporting Files'

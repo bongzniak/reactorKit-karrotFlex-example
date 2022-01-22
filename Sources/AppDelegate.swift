@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  appname
+//  ReactorKit-KarrotFlex-Example
 //
 //  Created by Fernando on 2020/09/29.
 //
@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.configureSDKs()
 
-        let reactor = MainViewReactor()
-        let controller = MainViewController(reactor: reactor)
-        let navigationController = BaseNavigationController(rootViewController: controller)
+        let navigationController = BaseNavigationController(
+            rootViewController: MainViewController.resolve()
+        )
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

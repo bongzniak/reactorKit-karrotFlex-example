@@ -165,3 +165,4 @@ Dependencies/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods,fastlane,objective-c
 fastlane/README.md
+.idea
